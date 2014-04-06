@@ -1,0 +1,23 @@
+# Dependencies
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            YAGRI
+tagline:          'Thoughts and observations from a hairy brain'
+description:      'Featuring (but not limited to) words about coding, approach, process - who knows...?'
+url:              http://dblv.github.io/
+
+author:
+  name:           'Will Jacobs'
+  url:            https://twitter.com/willtheguvnor
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/DblV/DblV.github.io

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Todo list
+excerpt: Some things to blog about...
+---
+
 * Cryptography in .Net
 * Practice programming
 * Rabbit MQ / NServiceBus
