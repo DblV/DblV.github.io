@@ -5,8 +5,6 @@ title: Home
 
 <h2>{{ site.tagline }}</h2>
 
-<p>Content forthcoming...</p>
-
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
@@ -18,7 +16,11 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {{ post.content | split:'<!--end_intro-->' | first }}
+    {% if post.content contains '<!--end_intro-->' %}
+      <a href="{{ post.url }}" style="float: right;"><em>(more...)</em></a>
+    {% endif %}
+    
   </div>
   {% endfor %}
 </div>

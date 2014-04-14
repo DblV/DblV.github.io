@@ -6,9 +6,8 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            YAGRI
-tagline:          'Thoughts and observations from a hairy brain'
-description:      'Featuring (but not limited to) words about coding, approach, process - who knows...?'
+title:            'GuvBlog'
+description:      'Words about technology'
 url:              http://dblv.github.io/
 
 author:
