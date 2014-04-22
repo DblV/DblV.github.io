@@ -4,6 +4,11 @@ title: Todo list
 excerpt: Some things to blog about...
 ---
 
+* Setting up the blog
+	* Installing / using Jekyll (and Ruby, and Pygments, and everything else) on Windows
+	* Tweaking Hyde / Jekyll / Liquid
+		* Excerpt_separator
+		* Splitting blogs into pages
 * Cryptography in .Net
 * Practice programming
 * Rabbit MQ / NServiceBus
@@ -13,7 +18,6 @@ excerpt: Some things to blog about...
 	* Caching
 	* URL rewriting
 * Web API:
-	* Caching and Etags
 	* Streaming
 * Expression&lt;T&gt;
 * Mutation testing

@@ -1,5 +1,5 @@
 # Dependencies
-markdown:		  kramdown
+markdown:         kramdown
 pygments:         true
 
 # Permalinks
@@ -15,6 +15,8 @@ author:
   url:            https://twitter.com/willtheguvnor
 
 paginate:         5
+
+excerpt_separator: <!--end_excerpt-->
 
 # Custom vars
 version:          1.0.0

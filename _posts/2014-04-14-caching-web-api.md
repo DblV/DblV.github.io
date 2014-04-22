@@ -1,15 +1,16 @@
 ---
 layout: post
-title: HTTP Caching in Web API
+title:  HTTP Caching in Web API
 ---
 
 This post aims to explain some of the ways in which caching of data in systems communicating over HTTP is achieved, and how to implement the different forms of caching in a web application created using ASP.NET Web API.
+
+<!--end_excerpt-->
 
 ## Caching in HTTP
 
 Broadly speaking (and that's the level I intend to stay at), caching in HTTP can be categorised into two models - expiration and validation.
 
-<!--end_intro-->
 ------
 
 ### Expiration model
