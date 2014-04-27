@@ -21,6 +21,7 @@ excerpt: Some things to blog about...
 	* Streaming
 * Expression&lt;T&gt;
 * Mutation testing
+* Dump files -> Visual Studio
 * Design patterns:
 	* Factory
 	* Decorator (Speak a number)
