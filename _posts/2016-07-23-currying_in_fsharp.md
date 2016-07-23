@@ -119,8 +119,8 @@ Alright, that example code was already very simple, and didn't really need a lot
 
 That's about it. There are many terrific resources around that go into a lot more detail than this.  Here's a few:
 
-For all things F#, Scott Wlaschin's http://www.fsharpforfunandprofit.com is basically the online bible!
+For all things F#, Scott Wlaschin's [fsharpforfunandprofit](http://www.fsharpforfunandprofit.com) is basically the online bible!
 
-In particular, the article on currying covers some other aspects and gotchas not touched on here: http://fsharpforfunandprofit.com/posts/currying/
+In particular, his [article on currying](http://fsharpforfunandprofit.com/posts/currying/) covers some other aspects and gotchas not touched on here.
 
-Also, this is a great write-up of partial application and currying in JavaScript: http://benalman.com/news/2012/09/partial-application-in-javascript/
+Also, follow this link for a great write-up of [partial application and currying in JavaScript](http://benalman.com/news/2012/09/partial-application-in-javascript/).
