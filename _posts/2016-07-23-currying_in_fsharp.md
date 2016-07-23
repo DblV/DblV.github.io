@@ -9,11 +9,11 @@ Currying is one of those subjects that continually seems to slip out of the back
 
 ## So, currying...
 
-F#, not uniquely among functional programming languages, has origins in lambda calculus. One of the core tenets of this school of mathematical thought is "functions take one value and return one value".
+F#, not uniquely among functional programming languages, has origins in [lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus). One of the core tenets of this school of mathematical thought is "functions take one value and return one value".
 
 So consider the following function declaration in F#. Two inputs, one output. Is this breaking the rules of lambda calculus?
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let add x y = x + y
 {% endhighlight %}
 
@@ -23,7 +23,7 @@ More detail?  OK.
 
 We can agree that the *outerAdd* function shown below does indeed meet the rule of one in, one out.
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let outerAdd x = 
     let innerAdd y = 
         x + y
@@ -34,7 +34,7 @@ We can also agree that the *outerAdd* and *add* functions both have the same sig
 
 Wait - you don't agree? Then throw them both into FSI, and let's compare:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 val outerAdd : x:int -> (int -> int)
 
 val add : x:int -> y:int -> int
@@ -50,36 +50,36 @@ Great. Wait, why is this great again?
 
 ## Partial application!
 
-Well, for one thing, the fact that F# internally curries your functions leads to the concept of *partial application*. This allows us to pass an incomplete set of arguments to a function, and partially execute that function using those arguments. This results in a new function being returned to the caller. Like:
+Well, for one thing, the fact that F# internally curries your functions leads to the concept of *partial application*. This allows us to pass an incomplete set of arguments to a function, and partially execute that function using those arguments. This results in a new function being returned to the caller.
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let add1 = outerAdd 1
 {% endhighlight %}
 
-As we now know, when we run the *outerAdd* function, we will get a function as the return value (which is actually the *innerAdd* function, with the *x* argument fixed to 1 in the outer scope).
+As we know, when we run the *outerAdd* function, we will get a function as the return value (which is actually the *innerAdd* function, with the *x* argument fixed to 1 in the outer scope).
 
 When we run this resulting function (at a later time), it will demand the remaining argument, and will add it to the fixed value.
 
-So here's the good bit: because the original *add* function is actually being curried for us, we're free to partially apply that too:
+So here's the good bit: because the original *add* function is actually being curried for us, we're free to partially apply it, and get a function that's identical to *innerAdd*:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let add1' = add 1
 {% endhighlight %}
 
-And this extends to functions with any number of arguments - you can fix these argument, in order left-to-right, to produce new functions.
+And this extends to functions with any number of arguments - you can fix these arguments, in order left-to-right, to produce new functions.
 
 ## How handy!
 
 Partial application can make code a lot cleaner, and increase reuse and readability. It's also used a lot when working with collections.
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let incBy x y = x + y
 let ints = [1..10]
 {% endhighlight %}
 
 If we wished to apply *incBy* to *ints* as a means of increasing each value in the list by 1, we could do this as follows:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 ints
 |> List.map (fun x -> incBy 1 x)
 {% endhighlight %}
@@ -88,7 +88,7 @@ The first argument supplied to *List.map* needs to be a function that takes a si
 
 However, the use of lambda syntax could distract a little from the purpose of the code. We can use partial application to clarify things:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 ints
 |> List.map (incBy 1)
 {% endhighlight %}
@@ -97,7 +97,7 @@ The partially applied *incBy* returns a function that is suitable for supplying 
 
 You could simplify further by defining a symbol for the partially applied function instead:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let incBy1 = incBy 1
 
 ints
@@ -106,7 +106,7 @@ ints
 
 Or indeed, by partially applying the *List.map* operation itself:
 
-{% highlight fsharp %}
+{% highlight Haskell %}
 let mapIncBy1 = List.map incBy1
 
 ints 
@@ -118,6 +118,6 @@ Alright, that example code was already very simple, and didn't really need a lot
 ## Other resources
 
 That's about it. There are many terrific resources around that go into a lot more detail than this.  Here's a few:
- - For all things F#, Scott Wlaschin's http://www.fsharpforfunandprofit.com is basically the online bible!
- - In particular, the article on currying covers some other aspects and gotchas not touched on here: http://fsharpforfunandprofit.com/posts/currying/
- - Also, this is a great write-up of partial application and currying in JavaScript: http://benalman.com/news/2012/09/partial-application-in-javascript/
+ * For all things F#, Scott Wlaschin's http://www.fsharpforfunandprofit.com is basically the online bible!
+ * In particular, the article on currying covers some other aspects and gotchas not touched on here: http://fsharpforfunandprofit.com/posts/currying/
+ * Also, this is a great write-up of partial application and currying in JavaScript: http://benalman.com/news/2012/09/partial-application-in-javascript/
