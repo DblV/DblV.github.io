@@ -17,7 +17,7 @@ So consider the following function declaration in F#. Two inputs, one output. Is
 let add x y = x + y
 {% endhighlight %}
 
-The answer is no (of course). When the above method is declared, what actually gets created by the compiler is a chain of functions, each with a single argument. This under-the-hood legwork allows functions with multiple inputs to be declared in a nice, syntactically clean way, while the code still holds true to the fundamental rules. And this general process, in which a function with multiple arguments is transformed into a chain of single-argument functions, is referred to as currying. (Named for Haskell Curry, of course. There, saves you a trip to [wikipedia...](https://en.wikipedia.org/wiki/Currying))
+The answer is no (of course). When the above function is declared, what actually gets created by the compiler is a chain of functions, each with a single argument. This under-the-hood legwork allows functions with multiple inputs to be declared in a nice, syntactically clean way, while the code still holds true to the fundamental rules. And this general process, in which a function with multiple arguments is transformed into a chain of single-argument functions, is referred to as currying. (Named for Haskell Curry, of course. There, saves you a trip to [wikipedia...](https://en.wikipedia.org/wiki/Currying))
 
 More detail?  OK.
 
